@@ -1,0 +1,29 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class WorkShowcase extends Model
+{
+    use HasFactory;
+
+    protected $table = 'work_showcase';
+
+    protected $fillable = [
+        'title',
+        'description',
+        'image',
+        'category',
+        'link',
+        'display_order',
+        'is_active',
+        'show_on_homepage',
+    ];
+
+    protected $casts = [
+        'is_active' => 'boolean',
+        'show_on_homepage' => 'boolean',
+    ];
+}
