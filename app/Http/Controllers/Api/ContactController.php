@@ -21,13 +21,11 @@ class ContactController extends Controller
             'email' => 'required|email|max:255',
             'phone' => 'nullable|string|max:20',
             'company_name' => 'nullable|string|max:255',
-            'services' => 'nullable|array', // Expecting array for checkboxes
-            'services.*' => 'string',
+            'services' => 'nullable', // Removed array validation to allow strings
             'budget' => 'nullable|string|max:255',
-            'url' => 'nullable|url|max:2048',
-            'page_url' => 'nullable|url|max:2048',
-            'message' => 'nullable|string',
-            'agree' => 'accepted' // "I agree to be contacted"
+            'url' => 'nullable|string|max:2048',
+            'page_url' => 'nullable|string|max:2048',
+            'message' => 'nullable|string'
         ]);
 
         if ($validator->fails()) {
